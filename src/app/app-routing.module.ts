@@ -11,6 +11,22 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'inicio-session',
+    loadChildren: () => import('./paginas/inicio-session/inicio-session.module').then( m => m.InicioSessionPageModule)
+  },
+  {
+    path: 'registro',
+    loadChildren: () => import('./paginas/registro/registro.module').then( m => m.RegistroPageModule)
+  },
+  {
+    path: 'editar-notas',
+    loadChildren: () => import('./paginas/editar-notas/editar-notas.module').then( m => m.EditarNotasPageModule)
+  },
+  {
+    path: 'agregar-nota',
+    loadChildren: () => import('./paginas/agregar-nota/agregar-nota.module').then( m => m.AgregarNotaPageModule)
+  },
 ];
 
 @NgModule({
