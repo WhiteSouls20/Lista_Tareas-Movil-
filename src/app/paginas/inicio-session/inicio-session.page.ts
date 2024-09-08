@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild, viewChild } from '@angular/core';
+import {Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, AnimationController, ToastController } from '@ionic/angular';
 
@@ -10,23 +10,29 @@ import { AlertController, AnimationController, ToastController } from '@ionic/an
 export class InicioSessionPage implements OnInit{
   usuario : string =""
   password : string = ""
+  showPassword = false;
 
-  //private animation: Animation;
+  
   constructor(public mensaje:ToastController,public alerta:AlertController, private router:Router, private animationCtrl: AnimationController) {  }
 
+//cambiar visibilidad de la contraseña
+  togglePasswordVisibility(){
+    this.showPassword = !this.showPassword;
+  }
 
-
+//mensaje de error
   async MensajeError() {
     const alert = await this.alerta.create({
       header: 'Error al iniciar sesion ',
-      subHeader: 'Usuario o contraseña incorrecto',
-      message: 'Error al iniciar sesion en la cuenta',
+      subHeader: 'Usuario, contraseña incorrecto o con espacios',
+      message: 'Error al iniciar sesion en la cuenta, por favor asegurese que ambos campos no esten vacios o con espacios',
       buttons: ['Aceptar']
     });
   
     await alert.present();
   }
 
+//mensaje de aprobacion
   async MensajeCorrecto() {
     const toast = await this.mensaje.create({
       message: 'Iniciaste sesion de manera exitosa! ',
@@ -35,9 +41,12 @@ export class InicioSessionPage implements OnInit{
     toast.present();
   }
 
+//Verifica que los campos no esten vacios ni tengan espacios
   ingresar(){
-    if (this.usuario ==="" || this.password==="" ){
-      console.log("No puede dejar el usuario y constraseña vacios ")
+    const usuario = this.usuario || '';
+    const password = this.password || '';
+    if (usuario.trim() === "" || password.trim() === "" || usuario.includes(' ') || password.includes(' ')){
+      console.log("No puede dejar el usuario y constraseña vacios o con espacios")
       this.MensajeError()
     }
     else{
