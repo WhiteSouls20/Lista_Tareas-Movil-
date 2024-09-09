@@ -5,7 +5,7 @@
 }
 
 ion-content::part(background) {
-  background: #a6a6aa;
+  background: linear-gradient(0deg, #3f3f3f, #cbcbcb)
 }
 
 ion-content::part(scroll) {
@@ -15,17 +15,18 @@ ion-content::part(scroll) {
 .botonRegistro {
   --background: #004e75;
   --color: black;
+  font-family: 'Times New Roman', Times, serif;
   margin-top: 130px;
 }
 
 .botonCancelar {
   --background: #ad0606;
   --color: black;
+  font-family: 'Times New Roman', Times, serif;
   margin-top: 130px;
 }
 
 .areaTexto {
-  background-color: #a7a7a7;
-  color: black;
   padding: 30px;
+  font-family: 'Times New Roman', Times, serif;
 }

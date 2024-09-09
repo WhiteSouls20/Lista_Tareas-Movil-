@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-editar-notas',
@@ -7,7 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditarNotasPage implements OnInit {
 
-  constructor() { }
+  constructor(private alertController: AlertController) { }
+
+  async actualizar() {
+    const alert = await this.alertController.create({
+      header: 'Tarea actualizada',
+      buttons: ['OK']
+    });
+    await alert.present();
+  }
+
+  async cancelar() {
+    const alert = await this.alertController.create({
+      header: 'Tarea cancelada con exito',
+      buttons: ['OK']
+    });
+    await alert.present();
+  }
 
   ngOnInit() {
   }
