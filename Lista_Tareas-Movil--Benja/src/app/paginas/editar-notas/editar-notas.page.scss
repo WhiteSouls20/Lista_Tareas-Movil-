@@ -1,0 +1,37 @@
+ion-content::part(background) {
+    background: linear-gradient(0deg, #3f3f3f, #cbcbcb) ;
+  }
+  
+  ion-content::part(scroll) {
+    color: rgb(0, 0, 0);
+  }
+
+  .titulos{
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .letras {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 20px;
+  }
+
+  .areaTexto {
+    width: 100%;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .botonActualizar {
+    --background: #0f4864;
+    --color: black;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 40px;
+  }
+  
+  .botonCancelar {
+    --background: #861111;
+    --color: black;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 40px;
+  }
