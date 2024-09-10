@@ -1,20 +1,26 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
+<ion-app>
+  <ion-header>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+  <ion-content class="fondo">
+    <div class="encabezado">
+      <h2 class="login">Iniciar <br> sesión</h2>
+      <h1 class="titulo">Tasks & <br> Notes</h1>
+
+      <img class="editar" src="../../assets/img/images-removebg-preview.png" alt="" [routerLink]="['/agregar-nota']">
+            <!-- <ion-router-link href="/paginas/agregar-nota">
+        <img class="editar" src="../../assets/img/images-removebg-preview.png" alt="Imagen 1">
+            </ion-router-link> -->
+      
+    </div>
+    <div *ngFor="let tarea of tareas">
+      <!-- Mostrar la descripción de la tarea y la fecha -->
+      <ion-item>
+        <div>
+          <strong>{{ tarea.descripcion }}</strong><br>
+          <small>{{ tarea.fecha }}</small>
+        </div>
+      </ion-item>
+    </div>
+  </ion-content>
+</ion-app>

@@ -27,6 +27,18 @@ const routes: Routes = [
     path: 'agregar-nota',
     loadChildren: () => import('./paginas/agregar-nota/agregar-nota.module').then( m => m.AgregarNotaPageModule)
   },
+  {
+    path: 'animaciones',
+    loadChildren: () => import('./animaciones/animaciones.module').then( m => m.AnimacionesPageModule)
+  },
+  {
+    path: 'animaciones',
+    loadChildren: () => import('./paginas/animaciones/animaciones.module').then( m => m.AnimacionesPageModule)
+  },
+  {
+    path: 'animacion',
+    loadChildren: () => import('./paginas/animacion/animacion.module').then( m => m.AnimacionPageModule)
+  },
 ];
 
 @NgModule({

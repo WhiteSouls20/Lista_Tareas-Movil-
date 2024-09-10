@@ -7,6 +7,13 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  tareas: any[] = []; // Lista de tareas que se mostrará
+
   constructor() {}
+
+  ionViewWillEnter() {
+    // Cargar las tareas guardadas en localStorage al entrar en la página
+    this.tareas = JSON.parse(localStorage.getItem('tareas') || '[]');
+  }
 
 }
