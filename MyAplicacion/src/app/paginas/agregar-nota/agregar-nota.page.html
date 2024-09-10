@@ -1,0 +1,42 @@
+<ion-app>
+  <ion-toolbar>
+    <ion-title>Mis notas</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-content>
+    <br><br><br><br><br>
+    <h1 class="titulos">Ingresa tu tarea</h1>
+
+    <!-- Input para la descripción de la tarea -->
+    <ion-item>
+      <ion-textarea [(ngModel)]="tarea" placeholder="Escribe aquí tu tarea..." class="areaTexto" rows="8" [autoGrow]="true">
+      </ion-textarea>
+    </ion-item>
+    <br>
+
+
+    <!-- Input para la fecha de la tarea -->
+    <ion-item>
+      <ion-label>Fecha</ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="fecha"></ion-datetime>
+    </ion-item>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="block" class="botonRegistro" (click)="registrarTarea()">
+            Registrar Tarea
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" class="botonCancelar" (click)="cancelar()">
+            Cancelar
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+</ion-app>
