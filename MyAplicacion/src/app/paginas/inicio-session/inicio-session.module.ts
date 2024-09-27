@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { InicioSessionPageRoutingModule } from './inicio-session-routing.module';
 
 import { InicioSessionPage } from './inicio-session.page';
+import { ShareModule } from 'src/app/modulos/share/share.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    InicioSessionPageRoutingModule
+    InicioSessionPageRoutingModule,
+    ShareModule
   ],
   declarations: [InicioSessionPage]
 })

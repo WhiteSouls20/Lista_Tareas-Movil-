@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-home',
@@ -8,12 +9,18 @@ import { Component } from '@angular/core';
 export class HomePage {
 
   tareas: any[] = []; // Lista de tareas que se mostrará
+  nombreUsuario : String="";
 
-  constructor() {}
+  constructor(private storage : Storage) {}
 
   ionViewWillEnter() {
     // Cargar las tareas guardadas en localStorage al entrar en la página
     this.tareas = JSON.parse(localStorage.getItem('tareas') || '[]');
+  }
+
+  async ngOnInit(){
+    await this.storage.create();
+    this.nombreUsuario = await this.storage.get("usuario");
   }
 
 }

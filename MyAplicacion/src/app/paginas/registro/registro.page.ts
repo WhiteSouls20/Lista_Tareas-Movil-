@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, AnimationController, ToastController } from '@ionic/angular';
+import { Storage } from '@ionic/storage-angular';
+
 
 @Component({
   selector: 'app-registro',
@@ -17,7 +19,7 @@ export class RegistroPage implements OnInit{
   showPassword_1 = false;
   showPassword_2 = false;
   
-  constructor(public mensaje:ToastController,public alerta:AlertController, private router:Router, private animationCtrl: AnimationController) {  }
+  constructor(public mensaje:ToastController,public alerta:AlertController, private router:Router, private animationCtrl: AnimationController, private storage : Storage) {  }
 
 //cambiar visibilidad de la contraseña
   togglePasswordVisibility_1(){
@@ -70,6 +72,7 @@ export class RegistroPage implements OnInit{
       this.MensajeError()
     }
     else{
+      this.storage.set("usuario", this.usuario)
       console.log("inicio de sesion exitoso ")
       this.MensajeCorrecto()
       this.router.navigate(["/inicio-session"])
@@ -79,7 +82,8 @@ export class RegistroPage implements OnInit{
 
 
 
-  ngOnInit() {
+  async ngOnInit() {
+    await this.storage.create();
   }
 
 }
