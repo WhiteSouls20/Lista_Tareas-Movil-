@@ -13,5 +13,15 @@ import { Storage } from '@ionic/storage-angular';
     async init(){
       await this.storage.create();
     }
+    canActivate : CanActivateFn = async(route,state) =>{
+      const SessionActive = await this.storage.get("SessionId");
+      if(SessionActive){
+        return this.route.createUrlTree(['home'])
+      }
+      else{
+        return true;
+      }
+    }
+
   }
 

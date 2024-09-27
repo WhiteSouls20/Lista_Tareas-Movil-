@@ -74,6 +74,7 @@ export class RegistroPage implements OnInit{
     else{
       this.storage.set("usuario", this.usuario)
       console.log("inicio de sesion exitoso ")
+      this.storage.set("SessionId", true)
       this.MensajeCorrecto()
       this.router.navigate(["/inicio-session"])
       
