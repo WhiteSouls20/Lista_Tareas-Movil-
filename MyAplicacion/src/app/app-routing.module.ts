@@ -41,6 +41,10 @@ const routes: Routes = [
     path: 'animacion',
     loadChildren: () => import('./paginas/animacion/animacion.module').then( m => m.AnimacionPageModule)
   },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./paginas/perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
 ];
 
 @NgModule({
