@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { Camera, CameraResultType, CameraSource }from '@capacitor/camera';
+//import para usar camara
+import { defineCustomElements} from '@ionic/pwa-elements/loader';
+defineCustomElements(window)
+import { Geolocation } from '@capacitor/geolocation';
+
 
 @Component({
   selector: 'app-agregar-nota',
@@ -11,6 +17,25 @@ export class AgregarNotaPage implements OnInit {
 
   tarea: string = '';  // Captura la descripción de la tarea
   fecha: string = '';  // Captura la fecha seleccionada
+
+
+  async tomarFoto(){
+    const image = await Camera.getPhoto({
+      resultType: CameraResultType.Uri,
+      source:CameraSource.Camera,
+      quality:100,
+    })
+    console.log(image.webPath);
+  }
+
+
+  async obtenerUbicacion(){
+    const coordenadas = await Geolocation.getCurrentPosition();
+    console.log('Latitud ==>', coordenadas.coords.latitude);
+    console.log('Longitud==>', coordenadas.coords.longitude);
+  }
+
+
 
   constructor(private router: Router) {}
 
