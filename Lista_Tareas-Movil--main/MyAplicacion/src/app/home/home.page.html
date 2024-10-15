@@ -1,0 +1,39 @@
+<ion-app>
+  <app-header [titulo]="'Bienvenido a la app'"></app-header>
+
+  <ion-content class="fondo">
+    <h1 class="titulo">Bienvenido {{nombreUsuario}}</h1>
+    <div class="encabezado">
+      <div>
+        <img class="editar" src="../../assets/img/iconoUsuario.png" alt="" style="position: absolute; right: 150px;" />
+        <br>
+        <br>
+        <h6 style="position: relative; right: 63px;">{{nombreUsuario}}</h6>
+      </div>
+      <h1 class="titulo">
+        Tasks & <br />
+        Notes
+      </h1>
+
+      <img
+        class="editar"
+        src="../../assets/img/images-removebg-preview.png"
+        alt=""
+        [routerLink]="['/agregar-nota']"
+      />
+      <!-- <ion-router-link href="/paginas/agregar-nota">
+        <img class="editar" src="../../assets/img/images-removebg-preview.png" alt="Imagen 1">
+            </ion-router-link> -->
+    </div>
+
+    <div *ngFor="let tarea of tareas">
+      <!-- Mostrar la descripción de la tarea y la fecha -->
+      <ion-item>
+        <div>
+          <strong>{{ tarea.descripcion }}</strong><br />
+          <small>{{ tarea.fecha }}</small>
+        </div>
+      </ion-item>
+    </div>
+  </ion-content>
+</ion-app>
