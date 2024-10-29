@@ -1,121 +1,121 @@
 //clase del ion-item de arriba
 .usuario{
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-top: 10%;
-  border-top-left-radius: 25px;  
-  border-top-right-radius: 25px;
-  opacity: 75%;
-}
-
-//clase del ion-item de abajo
-.password{
-  margin-left: 10%;
-  margin-right: 10%;
-  border-bottom-left-radius: 25px;  
-  border-bottom-right-radius: 25px;
-  opacity: 75%;
-}
-
-//clase para los ion-item del medio
-.item{
-  margin-left: 10%;
-  margin-right: 10%;
-  opacity: 75%;
-}
-
-//color del floating label
-::ng-deep ion-input .label-text{
-  color: #deb887;
-}
-
-//clase del boton
-.boton{
-  margin-top: 10%;
-  --border-radius: 20px;
-  margin-left: 10%;
-  margin-right: 10%;
-  --background: #deb887;    
-}
-
-//clase del icono del usuario
-.icono{
-  scale: 120%;
-  margin-left: 150px;
-  margin-right: 150px;
-  margin-top: 35%; 
-}
-
-//clase del texto
-.texto{
-  position: relative;
-  z-index: 1;
-  font-size: larger;
-  text-align: center;
-  background: linear-gradient(0deg, #3f3f3f, #cbcbcb);
-  background-size: 500% 1000%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: gradient-animation-texto 13s ease-in-out infinite;
-  margin: 0;
-}
-
-//animacion del texto
-@keyframes gradient-animation-texto {
-  0% {
-    background-position: 0% 0%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 10%;
+    border-top-left-radius: 25px;  
+    border-top-right-radius: 25px;
+    opacity: 75%;
   }
-  50% {
-    background-position: 0% 100%;
+  
+  //clase del ion-item de abajo
+  .password{
+    margin-left: 10%;
+    margin-right: 10%;
+    border-bottom-left-radius: 25px;  
+    border-bottom-right-radius: 25px;
+    opacity: 75%;
   }
-  100% {
-    background-position: 0% 0%;
+  
+  //clase para los ion-item del medio
+  .item{
+    margin-left: 10%;
+    margin-right: 10%;
+    opacity: 75%;
   }
-}
-
-.titulo_h1{
-  font-size: 34px;
-  text-align: center;
-  background: linear-gradient(0deg, #3f3f3f, #cbcbcb);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: gradient-animation-texto 13s ease-in-out infinite;
-  background-size: 500% 1000%;
-}
-
-//contenedor del texto
-.container {
-  display: flex;
-  align-items: center;
-  padding-left: 27%;
-  padding-right: 27%;
-  margin-top: 10px; 
-}
-
-//fondo
-.animated-background {
-  position: absolute; 
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh; 
-  background: linear-gradient(90deg, #3f3f3f, #cbcbcb);
-  background-size: 400% 400%;
-  animation: gradient-animation-fondo 13s ease infinite;
-  z-index: -1; 
-}
-
-//animacion del fondo
-@keyframes gradient-animation-fondo {
-  0% {
-    background-position: 0% 50%; 
+  
+  //color del floating label
+  ::ng-deep ion-input .label-text{
+    color: #deb887;
   }
-  50% {
-    background-position: 100% 50%; 
+  
+  //clase del boton
+  .boton{
+    margin-top: 10%;
+    --border-radius: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+    --background: #deb887;    
   }
-  100% {
-    background-position: 0% 50%; 
+  
+  //clase del icono del usuario
+  .icono{
+    scale: 120%;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 35%; 
   }
-}
+  
+  //clase del texto
+  .texto{
+    position: relative;
+    z-index: 1;
+    font-size: larger;
+    text-align: center;
+    background: linear-gradient(0deg, #3f3f3f, #cbcbcb);
+    background-size: 500% 1000%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-animation-texto 13s ease-in-out infinite;
+    margin: 0;
+  }
+  
+  //animacion del texto
+  @keyframes gradient-animation-texto {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 0% 100%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
+  
+  .titulo_h1{
+    font-size: 34px;
+    text-align: center;
+    background: linear-gradient(0deg, #3f3f3f, #cbcbcb);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-animation-texto 13s ease-in-out infinite;
+    background-size: 500% 1000%;
+  }
+  
+  //contenedor del texto
+  .container {
+    display: flex;
+    align-items: center;
+    padding-left: 27%;
+    padding-right: 27%;
+    margin-top: 10px; 
+  }
+  
+  //fondo
+  .animated-background {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; 
+    background: linear-gradient(90deg, #3f3f3f, #cbcbcb);
+    background-size: 400% 400%;
+    animation: gradient-animation-fondo 13s ease infinite;
+    z-index: -1; 
+  }
+  
+  //animacion del fondo
+  @keyframes gradient-animation-fondo {
+    0% {
+      background-position: 0% 50%; 
+    }
+    50% {
+      background-position: 100% 50%; 
+    }
+    100% {
+      background-position: 0% 50%; 
+    }
+  }

@@ -1,6 +1,12 @@
 import {Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, AnimationController, ToastController } from '@ionic/angular';
+import { Camera, CameraResultType, CameraSource }from '@capacitor/camera';
+//import para usar camara
+import { defineCustomElements} from '@ionic/pwa-elements/loader';
+defineCustomElements(window)
+import { Geolocation } from '@capacitor/geolocation';
+
 
 @Component({
   selector: 'app-inicio-session',
@@ -8,12 +14,33 @@ import { AlertController, AnimationController, ToastController } from '@ionic/an
   styleUrls: ['./inicio-session.page.scss'],
 })
 export class InicioSessionPage implements OnInit{
+
+
+  async tomarFoto(){
+    const image = await Camera.getPhoto({
+      resultType: CameraResultType.Uri,
+      source:CameraSource.Camera,
+      quality:100,
+    })
+    console.log(image.webPath);
+  }
+
+
+  async obtenerUbicacion(){
+    const coordenadas = await Geolocation.getCurrentPosition();
+    console.log('Latitud ==>', coordenadas.coords.latitude);
+    console.log('Longitud==>', coordenadas.coords.longitude);
+  }
+
+
   usuario : string =""
   password : string = ""
   showPassword = false;
 
   
-  constructor(public mensaje:ToastController,public alerta:AlertController, private router:Router, private animationCtrl: AnimationController) {  }
+  constructor(public mensaje:ToastController,public alerta:AlertController, private router:Router, private animationCtrl: AnimationController) { 
+    this.obtenerUbicacion();
+   }
 
 //cambiar visibilidad de la contraseña
   togglePasswordVisibility(){

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1076445882942",
+    "project_id": "proyecto-movil-be631",
+    "storage_bucket": "proyecto-movil-be631.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1076445882942:android:f6973645355e0fd7afbf6f",
+        "android_client_info": {
+          "package_name": "movil.duoc_proyecto"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyOBt99DnMFny6Y4hU-l2v35RvnTOZyNQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, AnimationController, ToastController } from '@ionic/angular';
+import { Storage } from '@ionic/storage-angular';
+import { FirebaseLoginService } from 'src/app/servicios/firebase-login.service';
+
 
 @Component({
   selector: 'app-registro',
@@ -17,7 +20,7 @@ export class RegistroPage implements OnInit{
   showPassword_1 = false;
   showPassword_2 = false;
   
-  constructor(public mensaje:ToastController,public alerta:AlertController, private router:Router, private animationCtrl: AnimationController) {  }
+  constructor(public mensaje:ToastController,public alerta:AlertController, private router:Router, private animationCtrl: AnimationController, private storage : Storage, private access:FirebaseLoginService) {  }
 
 //cambiar visibilidad de la contraseña
   togglePasswordVisibility_1(){
@@ -43,7 +46,7 @@ export class RegistroPage implements OnInit{
 //mensaje de aprobacion
   async MensajeCorrecto() {
     const toast = await this.mensaje.create({
-      message: 'Iniciaste sesion de manera exitosa! ',
+      message: 'Se registro correctamente! ',
       duration: 2000
     });
     toast.present();
@@ -70,15 +73,30 @@ export class RegistroPage implements OnInit{
       this.MensajeError()
     }
     else{
-      console.log("inicio de sesion exitoso ")
-      this.MensajeCorrecto()
-      this.router.navigate(["/inicio-session"])
+      this.access.login(this.usuario, this.password).then(()=>{
+        this.storage.set("usuario", this.usuario)
+        console.log("inicio de sesion exitoso ")
+        this.storage.set("SessionId", true)
+        this.MensajeCorrecto()
+        this.router.navigate(["/inicio-session"])
+      }).catch(()=>{
+        this.MensajeError()
+      })
       
     }
   }
 
+  // registerUser(email:string, password:string){
+  //   return this.afAuth.createUserWithEmailAndPassword(email, password)
+  //   .then((res=>){
+  //     this.afAuth.signInWithEmailAndPassword
+  //   })
+  // }
 
-  ngOnInit() {
+
+
+  async ngOnInit() {
+    await this.storage.create();
   }
 
 }

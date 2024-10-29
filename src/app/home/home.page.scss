@@ -25,3 +25,57 @@
 #container a {
   text-decoration: none;
 }
+
+.fondo {
+  background: linear-gradient(to right, #a6a6a6, #ffffff);
+}
+
+ion-content{
+  --ion-background-color: linear-Gradiente(to right, #a6a6a6, #ffffff);
+}
+.encabezado{
+  display: flex;
+  place-content: center;
+  place-items: center;
+}
+.login{
+  text-align: center;
+  position: relative;
+  right: 50px;
+}
+.titulo{
+  text-align: center;
+  position: relative;
+  place-items: center;
+}
+
+.editar{
+  width: 50px;
+  height: 50px;
+  position: relative;
+  left: 50px;
+}
+
+ion-label{
+  background-color: white;
+  margin: 0 auto;
+  display: flex;
+  place-content: center;
+  width: 250px;
+  border-radius: 3px;
+}
+
+.labels {
+  display: flex;
+}
+
+
+
+ion-button{
+  right: 20px;
+  position: absolute;
+  border-radius: 100%;
+  background-color: red;
+  width: 1px;
+  height: 1px;
+}
