@@ -15,7 +15,12 @@ export class HomePage {
 
   ionViewWillEnter() {
     // Cargar las tareas guardadas en localStorage al entrar en la página
-    this.tareas = JSON.parse(localStorage.getItem('tareas') || '[]');
+    this.tareas = JSON.parse(localStorage.getItem('tareas') || '[]').map((tarea: any) => {
+      if (!tarea.fecha || isNaN(Date.parse(tarea.fecha))) {
+        tarea.fecha = new Date().toISOString(); // Fecha actual en formato ISO
+      } 
+      return tarea;
+    });  
   }
 
   async ngOnInit(){

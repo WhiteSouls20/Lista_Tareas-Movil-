@@ -28,7 +28,7 @@
 
     <div *ngFor="let tarea of tareas">
       <!-- Mostrar la descripción de la tarea y la fecha -->
-      <ion-item [routerLink]="['/editar-notas', { descripcion: tarea.descripcion }]">
+      <ion-item [routerLink]="['/editar-notas', { id: tarea.id }]">
         <div>
           <strong>{{ tarea.descripcion }}</strong><br />
           <small>{{ tarea.fecha }}</small>

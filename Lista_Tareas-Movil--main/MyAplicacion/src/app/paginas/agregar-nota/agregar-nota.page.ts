@@ -44,26 +44,26 @@ export class AgregarNotaPage implements OnInit {
 
   registrarTarea() {
     if (this.tarea.trim() && this.fecha) {
-      // Obtén las tareas almacenadas
+
       const tareasGuardadas = JSON.parse(localStorage.getItem('tareas') || '[]');
 
-      // Agregar la nueva tarea con la fecha
       const nuevaTarea = {
+        id: Date.now(),
         descripcion: this.tarea,
-        fecha: this.fecha,
+        fecha: this.fecha ? new Date(this.fecha).toISOString() : new Date().toISOString(),
         foto: this.foto
       };
       tareasGuardadas.push(nuevaTarea);
 
-      // Guardar nuevamente la lista de tareas en localStorage
+
       localStorage.setItem('tareas', JSON.stringify(tareasGuardadas));
 
-      // Limpiar los campos
+      
       this.tarea = '';
       this.fecha = '';
       this.foto = '';
 
-      // Navegar a la página de visualización de tareas
+
       this.router.navigate(['/home']);
     }
   }
