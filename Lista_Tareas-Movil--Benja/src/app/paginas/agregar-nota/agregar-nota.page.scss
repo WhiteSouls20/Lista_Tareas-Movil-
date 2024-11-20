@@ -1,0 +1,32 @@
+.titulos{
+  text-align: center;
+  font-size: 40px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+ion-content::part(background) {
+  background: linear-gradient(0deg, #3f3f3f, #cbcbcb)
+}
+
+ion-content::part(scroll) {
+  color: black;
+}
+
+.botonRegistro {
+  --background: #004e75;
+  --color: black;
+  font-family: 'Times New Roman', Times, serif;
+  margin-top: 130px;
+}
+
+.botonCancelar {
+  --background: #ad0606;
+  --color: black;
+  font-family: 'Times New Roman', Times, serif;
+  margin-top: 130px;
+}
+
+.areaTexto {
+  padding: 30px;
+  font-family: 'Times New Roman', Times, serif;
+}
