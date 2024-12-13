@@ -1,0 +1,39 @@
+# Node.js
+node_modules/
+
+# Android
+android/
+
+# Archivos de configuración de IDEs
+.vscode/
+.idea/
+
+# Dependencias de otros entornos o plataformas
+*.log
+*.lock
+
+# Archivos de sistema
+.DS_Store  # macOS
+Thumbs.db  # Windows
+
+# Archivos compilados
+*.out
+*.class
+*.apk
+*.dex
+*.jar
+*.war
+
+# Archivos temporales
+*.tmp
+*.swp
+*.bak
+
+# Archivos de entorno
+.env
+
+# Angular
+.angular
+.cache
+.18.2.1
+.angular-webpack
