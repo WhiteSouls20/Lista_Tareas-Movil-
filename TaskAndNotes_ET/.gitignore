@@ -31,9 +31,3 @@ Thumbs.db  # Windows
 
 # Archivos de entorno
 .env
-
-# Angular
-.angular
-.cache
-.18.2.1
-.angular-webpack

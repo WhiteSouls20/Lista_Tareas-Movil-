@@ -1,0 +1,115 @@
+<ion-app>
+  <app-header [titulo]="'Bienvenido a la app'"></app-header>
+
+  <ion-content class="fondo">
+    <h1 class="titulo">Bienvenido {{nombreUsuario}}</h1>
+    <div class="encabezado">
+      <div>
+        <img class="editar" src="../../assets/img/iconoUsuario.png" alt="" style="position: absolute; right: 150px;" [routerLink]="['/perfil']" />
+        <br>
+        <br>
+        <h6 style="position: relative; right: 63px;">{{nombreUsuario}}</h6>
+      </div>
+      <h1 class="titulo">
+        Tasks & <br />
+        Notes
+      </h1>
+
+      <img
+        class="editar"
+        src="../../assets/img/images-removebg-preview.png"
+        alt=""
+        [routerLink]="['/agregar-nota']"
+      />
+    </div>
+
+    <div *ngIf="weatherData; else loading">
+      <h2>{{ weatherData.name }}</h2>
+      <p>Temperatura: {{ weatherData.main.temp }}°C</p>
+      <p>Descripción: {{ weatherData.weather[0].description }}</p>
+      <p>Humedad: {{ weatherData.main.humidity }}%</p>
+    </div>
+  
+    <!-- Muestra este mensaje mientras se cargan los datos -->
+    <ng-template #loading>
+      <p>Cargando datos del clima...</p>
+    </ng-template>
+
+    <!-- Mostrar tareas y fecha desde localStorage -->
+    <div *ngFor="let x of task">
+      <ion-item [routerLink]="['/editar-notas', { id: x.idtasks }]">
+        <div>
+          <strong>{{ x.titulo }}</strong><br/>
+          <small>{{ x.descripcion }}</small><br/>
+          <small>{{ x.estado }}</small><br/>
+          <small *ngIf="x.fecha">{{ x.fecha | date: 'shortDate' }}</small> <!-- Mostrar la fecha aquí -->
+        </div>
+      </ion-item>
+    </div>
+
+    <br>
+    <br>
+
+    <!-- <ion-list>
+      <ion-item *ngFor="let x of task; let i = index">
+        <ion-label>titulo: {{ x.titulo }}</ion-label>
+        <p>descripcion: {{ x.descripcion }}</p>
+        <p>estado: {{ x.estado }}</p>
+        <ion-buttons slot="end">
+          <ion-button (click)="edit(x)">
+            <ion-icon slot="icon-only" name="create"></ion-icon>
+          </ion-button>
+  
+          <ion-button (click)="delete(x)">
+            <ion-icon slot="icon-only" name="trash" color></ion-icon>
+          </ion-button>
+  
+        </ion-buttons>
+      </ion-item>
+    </ion-list>
+
+    <br>
+    <br> -->
+
+    <!-- <ion-card>
+      <ion-item>
+        <ion-label>Titulo</ion-label>
+        <ion-input [(ngModel)]="newTask.titulo"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>Descripcion</ion-label>
+        <ion-input [(ngModel)]="newTask.descripcion"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>Estado</ion-label>
+        <ion-input [(ngModel)]="newTask.estado"></ion-input>
+      </ion-item>
+    
+      <ion-button expand="block" (click)="save()">Guardar Tarea</ion-button>
+    </ion-card> -->
+    
+
+    
+
+      <!-- <ion-button (click)="save()" expand="block"  shape="round" color="success">
+        Guardar
+      </ion-button> -->
+
+    
+
+    <!-- @if (cargando) {
+      <div style="text-align: center;">
+        <ion-spinner name="bubbles"></ion-spinner>
+      </div>
+    } -->
+
+
+    
+
+
+
+
+  </ion-content>
+</ion-app>

@@ -1,0 +1,42 @@
+<ion-app>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-content>
+    <h1 class="titulos">Editar tarea</h1>
+    <ion-item>
+      <ion-label position="stacked">Título</ion-label>
+      <ion-input [(ngModel)]="tarea.titulo"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="stacked">Descripción</ion-label>
+      <ion-textarea [(ngModel)]="tarea.descripcion"></ion-textarea>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="stacked">Estado</ion-label>
+      <ion-input [(ngModel)]="tarea.estado"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="stacked">Fecha</ion-label>
+      <ion-datetime [(ngModel)]="tarea.fecha" presentation="date-time"></ion-datetime>
+    </ion-item>
+  
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="block" (click)="actualizar()">Actualizar</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" color="danger" (click)="cancelar()">Eliminar</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+  
+</ion-app>
